@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Шахівниця</title>
+  <style>
+    body {
+      background: #cce7ff;
+      text-align: center;
+      font-family: Arial;
+      color: #003366;
+    }
+    canvas {
+      background: #e6f2ff;
+      border: 2px solid #3399ff;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1> Шахівниця</h1>
+  <canvas id="board" width="320" height="320"></canvas>
+
+  <script>
+    const canvas = document.getElementById('board');
+    const ctx = canvas.getContext('2d');
+
+    const size = 8; // 8x8
+    const cell = canvas.width / size;
+
+    for (let row = 0; row < size; row++) {
+      for (let col = 0; col < size; col++) {
+        if ((row + col) % 2 === 0) {
+          ctx.fillStyle = '#ffffff';
+        } else {
+          ctx.fillStyle = '#66b2ff'; // блакитні клітинки
+        }
+        ctx.fillRect(col * cell, row * cell, cell, cell);
+      }
+    }
+  </script>
+</body>
+</html>

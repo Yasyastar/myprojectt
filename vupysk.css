@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+header{
+		background-image: url(https://www.bing.com/images/search?view=detailV2&ccid=kLy3B3ra&id=88BF117D60EE73FD6175733E9C81B83CEA3D7599&thid=OIP.kLy3B3raivOKLgMhErisKwHaHb&mediaurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f82%2f57%2f40%2f825740dbdf2781b587968f15e19481b2.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.90bcb7077ada8af38a2e032112b8ac2b%3frik%3dmXU96jy4gZw%252bcw%26pid%3dImgRaw%26r%3d0&exph=739&expw=736&q=%d0%9a%d1%80%d0%b0%d1%81%d0%bd%d0%b0%d1%8f+%d0%ad%d1%81%d1%82%d0%b5%d1%82%d0%b8%d0%ba%d0%b0&simid=608038748828164630&FORM=IRPRST&ck=5600A3140CF809315DDCFFCCF1C8FAC2&selectedIndex=33&itb=0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family:'Pacifico',cursive ;
+	height: 200px;
+}
+p{
+    color: #a93434;
+    text-align: center;
+}
+img{
+    text-align: center;
+}
+body{
+  background-color: rgb(117, 0, 0);
+}
+h1{
+	font-size: 8vw;
+}
+a{
+  text-decoration: none;
+}
+h2{
+  text-align: center;
+}
+button{
+  width: 80%;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+aside{
+	width: 20%;
+	background-color: rgb(74, 0, 0);
+	float: left;
+	}
+
+main{
+	width: 60%;
+	background-color: rgb(183, 0, 6);
+	float: left;
+}
+nav{
+	width: 20%;
+	background-color: rgb(90, 28, 28);
+	float: left;
+}
+footer{
+	background-color: rgb(248, 98, 98);
+	height: 150px;
+	clear: both;
+}
+і
+h2{
+	
+	font-size: 3vw;
+		display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-size: 22px;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #220000,
+    #eb5656,
+    #8e1616,
+    hsl(352, 73%, 35%),
+    #711c1c,
+    #461111,
+    #ff2f00,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+

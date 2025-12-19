@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ <script> let canvas = document.getElementById("myCanvas"), cxt = canvas.getContext("2d");
+canvas.height = 500;
+canvas.width = 500;
+const colors = [
+  "red", "blue", "green", "yellow", "orange", "purple", "pink",
+  "brown", "gray", "black", "white", "cyan", "magenta", "lime",
+  "teal", "indigo", "violet", "gold", "silver", "navy",
+  "coral", "turquoise", "beige", "olive", "maroon",
+  "salmon", "orchid", "chocolate", "plum", "khaki"
+];
+cxt.strokeStyle = "red";
+cxt.fillStyle = "blue";
+cxt.lineWidth = 6;
+let number=prompt("How many?",10);
+let x;
+let y;
+for(let i=0; i<number; i++){
+x=Math.floor(Math.random()*394); 
+y=Math.floor(Math.random()*394);       
+cxt.strokeRect(x, y, 100, 100);
+cxt.fillRect(x, y, 100, 100);
+}</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Зміна фону</title>
+  <style>
+    body {
+      background: #cce7ff;
+      text-align: center;
+      font-family: Arial;
+      color: #003366;
+    }
+    canvas {
+      background: #e6f2ff;
+      border: 2px solid #3399ff;
+      border-radius: 15px;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #3399ff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1a8cff;
+    }
+  </style>
+</head>
+<body>
+  <h1> Зміна фону по кнопці</h1>
+
+
+  <canvas id="c" width="400" height="200"></canvas>
+
+  <button onclick="changeBackground()"> Змінити фон</button>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+
+    const backgrounds = ['#e6f2ff', '#cce7ff', '#b3daff', '#99ccff', '#ffffff'];
+    let index = 0;
+
+    function drawText() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.font = '30px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#003366';
+      ctx.fillText('Натисни кнопку', canvas.width / 2, canvas.height / 2);
+    }
+
+    function changeBackground() {
+      index = (index + 1) % backgrounds.length;
+      canvas.style.background = backgrounds[index];
+      drawText();
+    }
+
+    drawText();
+  </script>
+</body>
+</html>

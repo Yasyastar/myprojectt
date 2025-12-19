@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сезон по місяцю</title>
+</head>
+<body>
+    <h2>Введіть порядковий номер місяця (від 1 до 12):</h2>
+    <p id="result"></p>
+
+    <script>
+        
+        let month = + prompt ('введіть число від 1 до 12')
+            if (month < 1 || month > 12 || isNaN(month)) {
+                result.textContent = 'Помилка! Введіть число від 1 до 12.';
+            } else {
+                switch (parseInt(month)) {
+                    case 12:
+                    case 1:
+                    case 2:
+                        result.textContent = 'Зима';
+                        break;
+                    case 3:
+                    case 4:
+                    case 5:
+                        result.textContent = 'Весна';
+                        break;
+                    case 6:
+                    case 7:
+                    case 8:
+                        result.textContent = 'Літо';
+                        break;
+                    case 9:
+                    case 10:
+                    case 11:
+                        result.textContent = 'Осінь';
+                        break;
+                }
+            }
+        
+    </script>
+</body>
+</html>
+</body>
+</html>

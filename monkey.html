@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Обезʼянка v2</title>
+  <style>
+    body {
+      background: #cce7ff;
+      text-align: center;
+      font-family: Arial;
+      color: #003366;
+    }
+    canvas {
+      background: #e6f2ff;
+      border: 2px solid #3399ff;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐵 Обезʼянка </h1>
+  <canvas id="c" width="400" height="350"></canvas>
+
+  <script>
+    const ctx = document.getElementById('c').getContext('2d');
+
+    // голова
+    ctx.fillStyle = '#8b5a2b';
+    ctx.beginPath();
+    ctx.arc(200, 180, 90, 0, Math.PI * 2);
+    ctx.fill();
+
+    // вушка
+    ctx.fillStyle = '#a67c52';
+    ctx.beginPath();
+    ctx.arc(110, 180, 30, 0, Math.PI * 2);
+    ctx.arc(290, 180, 30, 0, Math.PI * 2);
+    ctx.fill();
+
+    // мордочка
+    ctx.fillStyle = '#d2b48c';
+    ctx.beginPath();
+    ctx.ellipse(200, 205, 55, 45, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    // очі
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.arc(170, 170, 12, 0, Math.PI * 2);
+    ctx.arc(230, 170, 12, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.fillStyle = '#000000';
+    ctx.beginPath();
+    ctx.arc(170, 170, 6, 0, Math.PI * 2);
+    ctx.arc(230, 170, 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    // носик
+    ctx.beginPath();
+    ctx.arc(200, 200, 6, 0, Math.PI * 2);
+    ctx.fill();
+
+    // ротик
+    ctx.strokeStyle = '#000000';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(200, 215, 20, 0, Math.PI);
+    ctx.stroke();
+  </script>
+</body>
+</html>

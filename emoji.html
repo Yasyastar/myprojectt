@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Пірамідка з емодзі</title>
+  <style>
+    body {
+      background: #cce7ff;
+      text-align: center;
+      font-family: Arial;
+      color: #003366;
+    }
+    canvas {
+      background: #e6f2ff;
+      border: 2px solid #3399ff;
+      border-radius: 15px;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #3399ff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1a8cff;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔺 Пірамідка з рандомних емодзі</h1>
+  <p>Кожен раз — нова пірамідка</p>
+
+  <canvas id="c" width="500" height="350"></canvas>
+  <button onclick="drawPyramid()">🔁 Перемалювати</button>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+
+    const emojis = ['😀','😺','🐼','🐵','💙','⭐','🌈','🍀','🦄','🎈'];
+
+    function randomEmoji() {
+      return emojis[Math.floor(Math.random() * emojis.length)];
+    }
+
+    function drawPyramid() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.font = '32px Arial';
+      ctx.textAlign = 'center';
+
+      const rows = 6;
+      const startY = 60;
+      const gap = 40;
+
+      for (let row = 0; row < rows; row++) {
+        const count = row + 1;
+        const startX = canvas.width / 2 - (count - 1) * gap / 2;
+
+        for (let i = 0; i < count; i++) {
+          ctx.fillText(randomEmoji(), startX + i * gap, startY + row * gap);
+        }
+      }
+    }
+
+    drawPyramid();
+  </script>
+</body>
+</html>

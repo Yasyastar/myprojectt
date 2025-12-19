@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<style>
+     body{
+        background-color: #fef100;
+    }
+    p{
+        background: rgb(143, 235, 252);
+        color: rgb(0, 0, 0);
+        font-size:   40px;
+    }
+</style>
+  <script>
+  
+     let answer;
+     let count = 0;
+    do{
+    answer = prompt("Введіть число від 1 до 100"); 
+    if (answer < 86){
+    alert("Ваше число менше");
+    }
+   else if (answer > 86){
+    alert("Ваше число більше");
+    } count++
+    }while((answer<86&&answer!=null)||(answer>86&&answer!=null))
+    if (answer == 86){
+    document.writeln(`Ви вгадали! Це число 86.Ви вгадали за ${answer}count++ cпроб`)
+    }else if(answer===null){
+        alert("До побачення!")
+    }
+  </script>  
+</body>
+</html>

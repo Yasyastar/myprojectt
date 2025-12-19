@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Випуск — Промене</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #0b0b0b;
+      color: #d2ffd2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #00ff88;
+      text-shadow: 0 0 10px #00ff88;
+    }
+
+    header p {
+      color: #aaffaa;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6em;
+      font-size: 1.2em;
+    }
+
+    .button-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .btn {
+      position: relative;
+      background-color: #111;
+      border: 2px solid #00ff88;
+      color: #00ff88;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.1em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .btn:hover {
+      background-color: #00ff88;
+      color: #0b0b0b;
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #00ff88;
+    }
+
+    .btn img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.15;
+      z-index: 0;
+      border-radius: 10px;
+      transition: opacity 0.3s ease;
+    }
+
+    .btn:hover img {
+      opacity: 0.25;
+    }
+
+    .btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      margin-top: 50px;
+      color: #00ff88;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Випуск — “Промене”</h1>
+    <p>
+      Ласкаво просимо на головну сторінку нашого випуску!  
+      Тут зібрано моменти, емоції й спогади, що світяться, як промені —  
+      теплі, яскраві та незабутні.
+    </p>
+  </header>
+
+  <div class="button-grid">
+    <!-- 15 кнопок -->
+    <div class="btn"><img src="https://picsum.photos/400?1"><span>Фотоальбом</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?2"><span>Наш клас</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?3"><span>Учителі</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?4"><span>Спогади</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?5"><span>Цитати</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?6"><span>Моменти</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?7"><span>Наші досягнення</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?8"><span>Відео</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?9"><span>Подяки</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?10"><span>Мрії</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?11"><span>Друзі</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?12"><span>Наші історії</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?13"><span>Свято випуску</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?14"><span>Майбутнє</span></div>
+    <div class="btn"><img src="https://picsum.photos/400?15"><span>Контакти</span></div>
+  </div>
+
+  <footer>
+    © 2025 Випуск “Промене” — створено з любов’ю 🌿
+  </footer>
+
+  <script>
+    // JS: анімація кліку по кнопках
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          btn.style.transform = 'scale(1)';
+          alert(`Ви натиснули: "${btn.innerText}"`);
+        }, 200);
+      });
+    });
+  </script>
+
+</body>
+</html>

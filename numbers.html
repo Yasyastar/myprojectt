@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Лічильник чисел</title>
+  <style>
+    body {
+      background: #cce7ff;
+      text-align: center;
+      font-family: Arial;
+      color: #003366;
+    }
+    canvas {
+      background: #e6f2ff;
+      border: 2px solid #3399ff;
+      border-radius: 15px;
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background: #3399ff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1a8cff;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔢 Лічильник чисел</h1>
+  <p>Числа йдуть від 1 до нескінченності</p>
+
+  <canvas id="c" width="400" height="200"></canvas>
+
+  <button onclick="start()">▶️ Старт</button>
+  <button onclick="stop()">⏸️ Зупинити</button>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+
+    let number = 1;
+    let timer = null;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.font = '60px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#3399ff';
+      ctx.shadowBlur = 20;
+      ctx.shadowColor = '#66ccff';
+      ctx.fillText(number, canvas.width / 2, canvas.height / 2);
+      number++;
+    }
+
+    function start() {
+      if (timer === null) {
+        timer = setInterval(draw, 500);
+      }
+    }
+
+    function stop() {
+      clearInterval(timer);
+      timer = null;
+    }
+  </script>
+</body>
+</html>

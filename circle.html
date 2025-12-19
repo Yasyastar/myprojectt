@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Рандомні кружечки</title>
+  <style>
+    body {
+      background: #cce7ff;
+      text-align: center;
+      font-family: Arial;
+      color: #003366;
+    }
+    canvas {
+      background: #e6f2ff;
+      border: 2px solid #3399ff;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔵🟣🟢 Рандомні кольорові кружечки</h1>
+  <p>Кружечки зʼявляються випадково</p>
+  <canvas id="c" width="500" height="300"></canvas>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function randomColor() {
+      const colors = ['#3399ff', '#66ccff', '#00ffff', '#9999ff', '#ffffff'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    function drawCircle() {
+      const x = random(20, canvas.width - 20);
+      const y = random(20, canvas.height - 20);
+      const r = random(5, 25);
+
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fillStyle = randomColor();
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = ctx.fillStyle;
+      ctx.fill();
+    }
+
+    setInterval(drawCircle, 300);
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Світловий текст Яся</title>
+  <style>
+    body {
+      background: #cce7ff;
+      text-align: center;
+      font-family: Arial;
+      color: #003366;
+    }
+    canvas {
+      background: #e6f2ff;
+      border: 2px solid #3399ff;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>✨ Світловий текст «Яся» (Canvas)</h1>
+  <canvas id="c" width="500" height="200"></canvas>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+
+    const colors = ['#3399ff', '#66ccff', '#00ffff', '#9999ff', '#ffffff'];
+    let index = 0;
+
+    function drawText() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = '80px Arial';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      ctx.shadowBlur = 25;
+      ctx.shadowColor = colors[index];
+      ctx.fillStyle = colors[index];
+
+      ctx.fillText('Яся', canvas.width / 2, canvas.height / 2);
+
+      index = (index + 1) % colors.length;
+    }
+
+    setInterval(drawText, 500);
+  </script>
+</body>
+</html>

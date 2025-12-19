@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Рухомий паровозик</title>
+  <style>
+    body {
+      background: #cce7ff;
+      text-align: center;
+      font-family: Arial;
+      color: #003366;
+    }
+    canvas {
+      background: #e6f2ff;
+      border: 2px solid #3399ff;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚂 Рухомий паровозик (Canvas)</h1>
+  <canvas id="c" width="500" height="300"></canvas>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    let x = 0;
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#3399ff';
+      ctx.fillRect(x, 180, 140, 40);
+      ctx.fillRect(x + 100, 150, 40, 30);
+
+      ctx.fillStyle = '#003366';
+      ctx.beginPath();
+      ctx.arc(x + 30, 225, 12, 0, Math.PI * 2);
+      ctx.arc(x + 110, 225, 12, 0, Math.PI * 2);
+      ctx.fill();
+
+      x += 2;
+      if (x > canvas.width) x = -150;
+
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  </script>
+</body>
+</html>
